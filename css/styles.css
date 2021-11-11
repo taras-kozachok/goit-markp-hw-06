@@ -732,6 +732,12 @@ button.secondery {
   background: var(--primary-white-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+.btn-close:hover,
+.btn-close:focus > .close-icon {
+  fill: var(--accent-color);
+  transition: color 250ms linear var(--time-func) transrorm 250ms linear
+    var(--time-func);
+}
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -839,8 +845,9 @@ button.secondery {
   transition: background-color 250ms linear var(--time-func) transrorm 250ms
     linear var(--time-func);
 }
-.label-policy:focus {
-  border: 1px solid var(--accent-color);
+.input-policy:focus + .label-policy::before {
+  border: 2px solid var(--accent-color);
+  transition: border-color 250ms var(--time-func);
 }
 .input-policy:checked + .label-policy::before {
   border: 1px solid var(--accent-color);
@@ -849,6 +856,8 @@ button.secondery {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-color 250ms var(--time-func),
+    border-color 250ms var(--time-func);
 }
 .input-form:placeholder-shown {
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -859,6 +868,7 @@ button.secondery {
   outline: none;
   border: 1px solid var(--accent-color);
   border-radius: 4px;
+  transition: border-color 250ms var(--time-func);
 }
 .textarea-form:placeholder-shown {
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -868,6 +878,7 @@ button.secondery {
 
 .input-form:focus + .svg-modal {
   fill: var(--accent-color);
+  transition: fill 250ms var(--time-func);
 }
 .label-policy {
   font-family: Roboto;
